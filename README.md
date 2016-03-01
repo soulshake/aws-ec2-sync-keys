@@ -17,3 +17,20 @@ If no input is provided, looks for private keys in ~/.ssh; otherwise takes multi
 
 If we need to retrive the pubkeys, we can use `ssh-add -L`
 (that way, it will work if someone is using an agent.)
+
+
+## To do
+
+### Key names
+
+Keys should be named as follows:
+
+<fingerprint>-<username>-<comment>
+
+* **fingerprint**: output of `ssh-add -l` (which is different from the fingerprint that appears in `aws ec2 describe-key-pairs`)
+* **username**: `os.getenv('USER')`
+* **comment**: comment that appears in `ssh-add -l`, if present
+
+### Integration in workshop deployment
+
+Take all this and make it a sync function in the deploy script (which is currently trainctl).
