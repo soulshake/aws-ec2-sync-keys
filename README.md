@@ -25,7 +25,7 @@ If we need to retrive the pubkeys, we can use `ssh-add -L`
 
 Keys should be named as follows:
 
-<fingerprint>-<username>-<comment>
+`<fingerprint> - <username> - <comment>`
 
 * **fingerprint**: output of `ssh-add -l` (which is different from the fingerprint that appears in `aws ec2 describe-key-pairs`)
 * **username**: `os.getenv('USER')`
